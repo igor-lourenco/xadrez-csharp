@@ -64,7 +64,7 @@ namespace Xadrez.xadrez {
         }
 
         public override string ToString() {
-            return "R";
+            return "R ";
         }
     }
 }

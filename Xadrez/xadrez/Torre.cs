@@ -25,10 +25,10 @@ namespace Xadrez.xadrez {
                 mat[pos.Linha, pos.Coluna] = true;
                 if (Tabuleiro.peca(pos) != null && Tabuleiro.peca(pos).Cor != Cor)
                     break;
-                pos.Linha = pos.Linha + 1;
+                pos.Linha = pos.Linha - 1;
                     }
             //Abaixo
-            pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna);
+            pos.DefinirValores(Posicao.Linha +1, Posicao.Coluna );
             while (Tabuleiro.PosicaoValida(pos) && PodeMover(pos)) {
                 mat[pos.Linha, pos.Coluna] = true;
                 if (Tabuleiro.peca(pos) != null && Tabuleiro.peca(pos).Cor != Cor)
@@ -45,20 +45,20 @@ namespace Xadrez.xadrez {
                 pos.Coluna = pos.Coluna + 1;
             }
 
-            //Abaixo
+            //Esquerdo
             pos.DefinirValores(Posicao.Linha , Posicao.Coluna -1 );
             while (Tabuleiro.PosicaoValida(pos) && PodeMover(pos)) {
                 mat[pos.Linha, pos.Coluna] = true;
                 if (Tabuleiro.peca(pos) != null && Tabuleiro.peca(pos).Cor != Cor)
                     break;
-                pos.Linha = pos.Linha - 1;
+                pos.Coluna = pos.Coluna - 1;
             }
 
             return mat;
         }
 
         public override string ToString() {
-            return "T";
+            return "T ";
         }
     }
 }

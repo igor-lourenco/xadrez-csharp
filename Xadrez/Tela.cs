@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Text;
 using Xadrez.tabuleiro;
@@ -7,6 +8,33 @@ using Xadrez.xadrez;
 
 namespace Xadrez {
     class Tela {
+
+        public static void ImprimirPartida(PartidaXadrez partida) {
+            Tela.ImprimirTabuleiro(partida.Tab);
+            Console.WriteLine();
+            ImprimirPecasCapturadas(partida);
+            Console.WriteLine();
+            Console.WriteLine("Turno -> " + partida.Turno);
+            Console.WriteLine("Aguardando Jogada -> " + partida.JogadorAtual);
+        }
+
+        public static void ImprimirPecasCapturadas(PartidaXadrez partida) {
+            Console.WriteLine("Peças capturadas");
+            Console.Write("Brancas: ");
+            ImprimirConjunto(partida.pecasCapturadas(Cor.Branca));
+            Console.Write("Pretas: ");
+            ConsoleColor aux = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            ImprimirConjunto(partida.pecasCapturadas(Cor.Preta));
+            Console.ForegroundColor = aux;
+        }
+
+        public static void ImprimirConjunto(HashSet<Peca> conjunto) {
+            Console.Write("["); ;
+            foreach(Peca x in conjunto)
+                Console.Write(x + " ");
+            Console.WriteLine("]");
+        }
 
         public static void ImprimirTabuleiro(Tabuleiro tab) {
             for (int i = 0; i < tab.Linhas; i++) {

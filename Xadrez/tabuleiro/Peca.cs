@@ -10,8 +10,8 @@ namespace Xadrez.tabuleiro {
         public int QuantidadeMovimento { get; protected set; }
         public Tabuleiro Tabuleiro { get; protected set; }
 
-        public Peca(Posicao posicao, Cor cor, Tabuleiro tabuleiro) {
-            Posicao = posicao;
+        public Peca(Cor cor, Tabuleiro tabuleiro) {
+            Posicao = null ;
             Cor = cor;
             Tabuleiro = tabuleiro;
             this.QuantidadeMovimento = 0;

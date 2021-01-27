@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using Xadrez.tabuleiro;
+using Xadrez.xadrez;
 
 namespace Xadrez {
     class Tela {
@@ -22,6 +23,13 @@ namespace Xadrez {
                 Console.WriteLine();
             }
             Console.WriteLine("  A  B  C  D  E  F  G  H");
+        }
+
+        public static PosicaoXadrez LerPosicaoXadrez() {
+            String s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = int.Parse(s[1] + "");
+            return new PosicaoXadrez(coluna, linha);
         }
 
         public static void ImprimirPeca(Peca peca) {

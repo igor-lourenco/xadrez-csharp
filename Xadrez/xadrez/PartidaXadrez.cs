@@ -169,13 +169,13 @@ namespace Xadrez.xadrez {
         }
         private void ColocarPecas() {
 
-            ColocarNovaPeca('c', 1, new Torre(Tab, Cor.Branca));
+            ColocarNovaPeca('g', 1, new Torre(Tab, Cor.Branca));
             ColocarNovaPeca('c', 2, new Torre(Tab, Cor.Branca));
-            ColocarNovaPeca('d', 1, new Rei(Tab, Cor.Branca));
+            ColocarNovaPeca('h', 1, new Rei(Tab, Cor.Branca));
 
             ColocarNovaPeca('c', 7, new Torre(Tab, Cor.Preta));
             ColocarNovaPeca('c', 8, new Torre(Tab, Cor.Preta));
-            ColocarNovaPeca('d', 8, new Rei(Tab, Cor.Preta));
+            ColocarNovaPeca('d', 7, new Rei(Tab, Cor.Preta));
 
         }
 
